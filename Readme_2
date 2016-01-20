@@ -1,0 +1,43 @@
+Program Functionality:
+The program is a server based program which is concurrent. This concurrency is achieved by creating new thread for new client connection(TCP) and for new request(UDP).
+select function is used for sleecting different protocol viz. TCP and UDP.
+
+The server is multithreaded and several critical variables are locked so that multiple threads cannot access it at same time.
+
+Based on client's reuest or command, the server acts accordingly.
+
+/*********************************************/
+Compilation steps:
+1. Open Terminal
+
+2. Change the directory to a particular location where make file is saved.
+
+3. Type make and then run the programs as given in step 4, 6 and 8.
+OR
+type:
+gcc server.c -o server -lpthread
+
+4. Run server_tcp.c (./server_tcp 8888)
+
+5. Open other terminal tab and go to destination folder.
+OR
+type:
+gcc client_tcp.c -o client_tcp 
+
+6. Run client_tcp.c with a command "list" (./client_tcp 127.0.0.1 8888 list)
+
+7. Open other terminal tab and go to destination folder.
+OR
+type:
+gcc client_udp.c -o client_udp 
+
+8. Run client_udp.c with a command "order" (./client_tcp 127.0.0.1 8888 order 1000 20)
+
+9. You can also add create multiple clients to test for concurrency. 
+
+/******************************************/
+
+Reference:
+1. Youtube videos
+2. Reference book: Internetworking with TCP-IP
+
